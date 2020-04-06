@@ -1,0 +1,86 @@
+<div class="content-wrapper" style="min-height: 657px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Perfil
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li class="active">Perfil</li>
+    </ol>
+    <br>
+  </section>
+
+  <div class="row">
+    <!-- .row -->
+    <div class="col-md-12">
+
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
+        <!-- <div class="image view view-first">
+            <img class="thumb-image" style="width: 100%; display: block;" src="images/profiles/default.png"" alt="image">
+        </div> -->
+        <!-- Profile Image -->
+        <div class="box box-success">
+          <div class="box-body box-profile">
+            <div id="load_img">
+              <img class="img-responsive" width="100%" src="../../assets/default.png" alt="Imagen de Perfil">
+            </div>
+            <h3 class="profile-username text-center">Hola Mundo</h3>
+            <p class="text-muted text-center mail-text"></p>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+        <span class="btn btn-my-button btn-file" style="width: 100%; margin-top: 5px;">
+          <form method="post" id="formulario" enctype="multipart/form-data">
+            Cambiar Imagen de perfil: <input type="file" name="file">
+          </form>
+        </span>
+        <div id="respuesta"></div><br>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <div class="box box-success">
+          <!-- general form elements -->
+          <div class="box-header with-border">
+            <h3 class="box-title">Datos Personales: </h3>
+          </div> <!-- /.box-header -->
+          <form role="form" method="post" action="action/updprofile.php">
+            <!-- form start -->
+            <div class="box-body">
+              <div class="form-group">
+                <label for="usuario">Nombre Usuario:</label>
+                <input name="usuario" type="text" class="form-control" id="usuario" value="admin">
+              </div>
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input name="nombre" type="text" class="form-control" id="nombre" value="Hola">
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input name="apellidos" type="text" class="form-control" id="apellidos" value="Mundo">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input name="email" type="email" class="form-control" id="email" value="">
+              </div>
+              <div class="form-group">
+                <label for="new_password">Nueva Contraseña</label>
+                <input name="new_password" type="password" class="form-control" id="new_password">
+              </div>
+              <div class="form-group">
+                <label for="confirm_new_password">Confirmar Nueva Contraseña</label>
+                <input name="confirm_new_password" type="password" class="form-control" id="confirm_new_password">
+              </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+              <button name="token" type="submit" class="btn btn-success">Actualizar Datos</button>
+            </div>
+          </form>
+        </div><!-- /.box -->
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div><!-- /.row -->
+
+</div>

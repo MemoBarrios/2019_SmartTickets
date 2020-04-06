@@ -1,0 +1,146 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace SmartTickets.Models
+{
+    public class Sucursal
+    {
+        public byte Compania { get; set; }
+        public short Clave { get; set; }
+        public string Nombre { get; set; }
+        public string Transporte { get; set; }
+        public string Calle { get; set; }
+        public string NoExterior { get; set; }
+        public string NoInterior { get; set; }
+        public string Referencia { get; set; }
+        public string Colonia { get; set; }
+        public string Pais { get; set; }
+        public string Estado { get; set; }
+        public string Ciudad { get; set; }  
+        public string Cp { get; set; }  
+        public string Lada { get; set; }  
+        public string Telefono1 { get; set; }  
+        public string Telefono2 { get; set; }  
+        public string Email { get; set; }  
+        public DateTime FechaPer { get; set; }  
+        public short DiasDev { get; set; }  
+        public short Dias_Bo { get; set; }  
+        public short DGrac_Fac { get; set; }  
+        public byte SeyaIni { get; set; }  
+        public byte SeyaFin { get; set; }  
+        public short DGrac_Nc { get; set; }  
+        public short DSal_Ven { get; set; }  
+        public short DRel_Pag { get; set; }  
+        public short DCanc_Rv { get; set; }  
+        public short DEmb_Fl { get; set; }  
+        public short DEmb_Ff { get; set; }  
+        public decimal Porc_SV { get; set; }  
+        public decimal Porc_LC { get; set; }  
+        public decimal Porc_CAS { get; set; }  
+        public decimal Pornc_DP { get; set; }  
+        public decimal Impuesto { get; set; }  
+        public decimal Intereses { get; set; }  
+        public decimal IntTE_FF { get; set; } 
+        public decimal IntTE_CP { get; set; } 
+        public decimal IntTN_FF { get; set; } 
+        public decimal IntTN_CP { get; set; }  
+        public decimal IntTR_FF { get; set; } 
+        public decimal IntTR_CP { get; set; } 
+        public decimal IntTO_FF { get; set; } 
+        public decimal IntTO_CP { get; set; } 
+        public DateTime FvTES_FF { get; set; } 
+        public DateTime FvTES_CP { get; set; } 
+        public DateTime FvTNA_FF { get; set; } 
+        public DateTime FvTNA_CP { get; set; } 
+        public DateTime FvTRE_FF { get; set; } 
+        public DateTime FvTRE_CP { get; set; } 
+        public DateTime FvTOF_FF { get; set; } 
+        public DateTime FvTOF_CP { get; set; } 
+        public short DesFtNor { get; set; } 
+        public short DesFtEsc { get; set; } 
+        public short DesFtNav { get; set; } 
+        public short DesFtRey { get; set; } 
+        public short DesFtOfi { get; set; } 
+        public short Dep_CLoc { get; set; } 
+        public short Dep_CFor { get; set; } 
+        public DateTime Ini_Nor { get; set; } 
+        public DateTime Fin_Nor { get; set; } 
+        public DateTime Ini_Esc { get; set; } 
+        public DateTime Fin_Esc { get; set; } 
+        public DateTime Ini_Nav { get; set; } 
+        public DateTime Dep_Nav { get; set; } 
+        public DateTime Ini_Rey { get; set; } 
+        public DateTime Fin_Rey { get; set; } 
+        public DateTime Ini_Ofi { get; set; } 
+        public DateTime Fin_Ofi { get; set; } 
+        public DateTime Ini_Exp { get; set; } 
+        public DateTime Fin_Exp { get; set; } 
+        public decimal Des_Desc { get; set; } 
+        public string B_Tipo { get; set; } 
+        public decimal DctoCred { get; set; } 
+        public decimal DctoCtdo { get; set; } 
+        public decimal DctoMsi { get; set; } 
+        public decimal FondoCaja { get; set; } 
+        public decimal MaxImpCaja { get; set; } 
+        public decimal ImpMinFac { get; set; } 
+        public decimal DctoDest { get; set; } 
+        public string B_TipoSuc { get; set; } 
+        public string Ip { get; set; } 
+        public string B_Negativos { get; set; } 
+        public string Generico_Sucursal { get; set; } 
+        public string B_IndReparto { get; set; } 
+        public string B_Estatus { get; set; } 
+        public DateTime FecITarj { get; set; } 
+        public DateTime FecFTarj { get; set; } 
+        public decimal ImpMinTj { get; set; } 
+        public string LeyTarj { get; set; } 
+        public short SucursalPrin { get; set; } 
+        public string Abreviatura { get; set; } 
+        public DateTime FecIniRED { get; set; } 
+        public DateTime FecFinRED { get; set; } 
+        public DateTime FecIniDM { get; set; }
+        public DateTime FecFinDM { get; set; } 
+        public DateTime VenBonMag { get; set; } 
+        public string NoCertificado { get; set; } 
+        public string ArchivoCert { get; set; } 
+        public string ArchivoKey { get; set; } 
+        public byte Region { get; set; } 
+        public decimal SDosMenPos { get; set; } 
+        public decimal SDosMenNeg { get; set; } 
+        public string SvrLocal { get; set; } 
+        public string SvrBackup { get; set; } 
+
+        public string Ruta { get; set; } 
+        public string B_IndCheckout { get; set; } 
+        public string B_IndFacCredito { get; set; } 
+        public string B_IndVendeCredito { get; set; } 
+        public short RegCartera { get; set; } 
+        public decimal Porc_ComBan { get; set; } 
+        public string Producto_ComBan { get; set; }
+        public decimal Porc_Anticipos { get; set; }
+        public decimal Porc_Defectuosos { get; set; }
+        public decimal Precio_RetoKilo { get; set; }
+        public string B_AutAjustes { get; set; }
+        public decimal ImpMinNC { get; set; }
+        public string Id_Usuario { get; set; }
+        public DateTime Id_Fecha { get; set; }
+        public short DiasDevMen { get; set; }
+        public string Producto_ValesCia { get; set; }
+        public string B_AutAjuMay { get; set; }
+        public DateTime FechaIniPNeto { get; set; }
+        public string DiasV_Computony { get; set; }
+        public byte Dias_VencimientoFac { get; set; }
+        public byte Dias_Recalculo { get; set; }
+        public byte DiasDev_Computony { get; set; }
+        public short TiempoRecalculo { get; set; }
+        public string Destino { get; set; }
+        public byte B_Computony { get; set; }
+        public byte B_Activa { get; set; }
+        public byte Orden_RegVtas { get; set; }
+        public byte Orden_RegCartera { get; set; }
+        public string PasswCertificado { get; set; }
+    }
+}

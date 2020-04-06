@@ -1,0 +1,209 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Captura de Ticket</h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-ticket"></i> Tickets</a></li>
+      <li class="active">Incidentes</li>
+      <li class="active">Captura</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-header">
+            <!-- <h3 class="box-title">Registro de tickets</h3> -->
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div id="Detalles" class="col-md-3">
+              <div class="row">
+                <label class="label-input100" for="Titulo">Folio: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">123456789</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Compañia: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">Tony Tiendas</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Usuario: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">Guillermo Barrios Lara</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Empleado Asignado: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">Guillermo Barrios Lara</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Estatus: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">Abierto</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Fecha Creacion: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo">13/01/2020</label>
+              </div>
+              <div class="row">
+                <label class="label-input100" for="Titulo">Fecha Cerrado: </label>
+              </div>
+              <div class="row">
+                <label class="label-input-det" for="Titulo"></label>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8">
+              <form (submit)="guardaCaptura()" [formGroup]="capturaTicketForm">
+                <div class="row">
+                  <div class="col-md-10">
+                    <label class="label-input100" for="Titulo">Titulo *</label>
+                    <div class="wrap-input100 validate-input">
+                      <input formControlName="titulo" id="Titulo" class="input-form" type="text" placeholder="Escriba el titulo de su incidente">
+                      <span class="focus-input100"></span>
+                    </div>
+                    <!-- Validaciones -->
+                    <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert alert-danger">
+                      <div *ngIf="titulo.errors.required">
+                        El titulo del ticket es requerido.
+                      </div>
+                    </div>
+                    <!-- Validaciones -->
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label class="label-input100" for="departamento">Departamento *</label>
+                    <div class="content-select">
+                      <select formControlName="departamento" (change)="consultaCategoriasXDep()" id="departamento" name="departamento">
+                        <option value="" disabled selected>Selecciona un departamento</option>
+                        <option *ngFor="let dep of dtDepartamentos" [ngValue]="dep.clave">{{dep.nombre}}</option>
+                      </select>
+                      <i></i>
+                    </div>
+                    <!-- Validaciones -->
+                    <!--<div *ngIf="departamento.invalid && (departamento.dirty || departamento.touched)" class="alert alert-danger">
+                      <div *ngIf="departamento.errors.required">
+                        El departamento es requerido.
+                      </div>
+                    </div>-->
+                    <!-- Validaciones -->
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <label class="label-input100" for="sucursal">Sucursal *</label>
+                    <div class="content-select">
+                      <select formControlName="sucursal" id="sucursal" name="sucursal">
+                        <option value="" disabled selected>Selecciona una sucursal</option>
+                        <option *ngFor="let suc of dtSucursales" [ngValue]="suc.clave">{{suc.clave}} - {{suc.nombre}}</option>
+                      </select>
+                      <i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label class="label-input100" for="categoria">Categoria *</label>
+                    <div class="content-select">
+                      <select formControlName="categoria" (change)="consultaSubcategoriasXCat()" id="categoria" name="categoria">
+                        <option value="" disabled selected>Selecciona una categoria</option>
+                        <option *ngFor="let categoria of dtCategorias" [ngValue]="categoria.clave">{{categoria.nombre}}</option>
+                      </select>
+                      <i></i>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <label class="label-input100" for="subcategoria">Subcategoria</label>
+                    <div class="content-select">
+                      <select formControlName="subcategoria" id="subcategoria" name="subcategoria">
+                        <option value="" disabled selected>Selecciona una subcategoria</option>
+                        <option *ngFor="let subcatego of dtSubcategorias" [ngValue]="subcatego.clave">{{subcatego.nombre}}</option>
+                      </select>
+                      <i></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-10">
+                    <label class="label-input100" for="descripcion">Descripcion *</label>
+                    <div class="wrap-input100 validate-input">
+                      <textarea formControlName="descripcion" id="descripcion" class="input-form" name="descripcion" placeholder="Escriba la descripcion de su problema..."></textarea>
+                      <span class="focus-input100"></span>
+                    </div>
+                    <!-- Validaciones -->
+                    <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="alert alert-danger">
+                      <div *ngIf="descripcion.errors.required">
+                        La descripcion del ticket es requerida.
+                      </div>
+                      <div *ngIf="descripcion.errors.minlength">
+                        Se requiere una descripcion mas amplia.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label class="label-input100" for="Prioridad">Prioridad</label>
+                    <div class="content-select">
+                      <select formControlName="prioridad" id="prioridad" name="prioridad">
+                        <option *ngFor="let p of prioridades" [value]="p.value">{{p.text}}</option>
+                      </select>
+                      <i></i>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <label class="label-input100" for="ip">IP</label>
+                    <div class="wrap-input100 validate-input">
+                      <input formControlName="ip" id="ip" class="input-form" type="text" name="ip" placeholder="Ej. 10.105.17.46">
+                      <span class="focus-input100"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-11">
+                    <label class="label-input100" for="adjuntos">Adjuntos</label>
+                    <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+                      <input formControlName="adjuntos" hidden type="file" #fileInput (change)="uploadFile($event.target.files)" id="adjuntos" name="adjuntos">
+                    </div>
+                    <div class="files-list" *ngFor="let file of files;let i= index">
+                      <p> {{ file }} </p>
+                      <button class="delete-file" (click)="deleteAttachment(i)">
+                        <img src="../../assets/Recycle_Bin_Full.png">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <button (click)="refrescar()" class="btn btn--radius-2 btn--blue" type="button" id="btnRefrescar">Refrescar</button>
+                  </div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5">
+                    <button class="btn btn--radius-2 btn--green" type="submit" id="btnGuardar">Guardar</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="dtIncidente != undefined && dtIncidente.length > 0">
+      <app-historial></app-historial>
+    </ng-container>
+</section>
+</div>

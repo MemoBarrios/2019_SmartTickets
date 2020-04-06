@@ -1,0 +1,389 @@
+.o_form_view .oe_chatter {
+  display: block;
+  min-width: 682px;
+  max-width: 892px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+}
+
+.o_chatter {
+  width: 100%;
+  padding-top: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/**/
+
+.o_chatter .o_chatter_topbar {
+  height: 33px;
+  position: relative;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+.o_chatter.o_chatter_composer_active .o_chatter_topbar > .btn.o_active, .o_chatter.o_chatter_composer_active .o_chatter_topbar > .o_followers.o_active {
+  color: #7c7bad;
+  background-color: #F9F9F9;
+  border-color: #E5E5E5;
+  border-width: 1px 1px 0;
+}
+
+.o_chatter.o_chatter_composer_active .o_chatter_topbar > .btn, .o_chatter.o_chatter_composer_active .o_chatter_topbar > .o_followers {
+  border-radius: 3px 3px 0 0;
+  border-width: 0 0 1px;
+  border-bottom-color: #E5E5E5;
+}
+
+.o_chatter .o_chatter_topbar > .btn {
+  height: 34px;
+  border: 1px solid transparent;
+}
+
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+  border-color: transparent;
+}
+
+.btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled], fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-link {
+  color: #7c7bad;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  overflow: visible;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/**/
+
+.o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) {
+  -ms-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer) {
+  padding: 18px;
+  padding-left: 62px;
+  border: 1px solid #E5E5E5;
+  border-top: none;
+}
+
+.o_chat_composer {
+  position: relative;
+  -ms-flex: 0 0 auto;
+  -moz-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin: 1px 0;
+  border-top: none;
+  background: #F9F9F9;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer) .o_chatter_composer_info, .o_chat_composer:not(.o_chat_mini_composer) .o_composer_suggested_partners {
+    -ms-flex: 0 0 100%;
+    -moz-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    flex: 0 0 100%;
+    margin-bottom: 5px;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) .o_composer_container, .o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) .o_composer_button_send {
+  -ms-flex: 1 0 100%;
+  -moz-flex: 1 0 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100%;
+  flex: 1 0 100%;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer) .o_composer_container {
+  position: relative;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) .o_composer_send {
+  margin-top: 10px;
+}
+
+/*Avatar o imagen de perfil*/
+.o_chat_composer:not(.o_chat_mini_composer) .o_chatter_avatar{
+    position: absolute;
+    top: 0;
+    left: -46px;
+    bottom: auto;
+    right: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+/*Caja que encierra el avatar, textarea y los botones de subir archivo y smiles*/
+
+.o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) .o_composer, .o_chat_composer:not(.o_chat_mini_composer):not(.o_chat_inline_composer) .o_composer_subject {
+  padding: 10px 10px 0;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer) .o_composer, .o_chat_composer:not(.o_chat_mini_composer) .o_composer_subject {
+  border: 1px solid #E5E5E5;
+}
+
+.o_chat_composer:not(.o_chat_mini_composer) .o_composer {
+  border-radius: 2px;
+}
+
+.o_chat_composer .o_composer, .o_chat_composer .o_composer_subject {
+  position: relative;
+  background: white;
+}
+
+/*Textarea del mensaje*/
+.o_chat_composer:not(.o_chat_mini_composer) .o_composer textarea, .o_chat_composer:not(.o_chat_mini_composer) .o_composer_subject textarea, .o_chat_composer:not(.o_chat_mini_composer) .o_composer input, .o_chat_composer:not(.o_chat_mini_composer) .o_composer_subject input {
+  padding: 0 0 10px;
+  border: none;
+}
+
+.o_chat_composer .o_composer .o_composer_input > textarea {
+  width: 100%;
+  resize: none;
+}
+
+.o_input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 4px;
+  color: #1f1f1f;
+}
+
+[type="text"], [type="password"], [type="number"], textarea, select {
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+/*Boton de subir archivo y smiles*/
+.o_chat_composer:not(.o_chat_mini_composer) .o_chatter_composer_tools {
+  border-top: 1px solid #E5E5E5;
+}
+
+.o_chat_composer .o_composer .btn-icon {
+  opacity: 0.8;
+  border: none;
+}
+
+.btn-icon {
+  color: #4c4c4c;
+  background-color: white;
+  border-color: #cccccc;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.o_chat_composer .o_composer .o_composer_button_full_composer{
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: 0;
+}
+
+
+
+small, .small {
+  font-size: 92%;
+}
+
+.text-muted {
+  color: #777777;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+.dropup, .dropdown {
+  position: relative;
+}
+
+.hide {
+  display: none !important;
+}
+
+h1 {
+  vertical-align: middle;
+}
+
+
+/*PANEL DE MENSAJES*/
+
+/*SEPARADOR*/
+
+.o_mail_thread .o_thread_date_separator, .o_mail_activity .o_thread_date_separator {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #d9d7d7;
+  text-align: center;
+}
+
+.o_mail_thread .o_thread_date_separator .o_thread_date, .o_mail_activity .o_thread_date_separator .o_thread_date {
+    position: relative;
+    top: 10px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-weight: bold;
+    background: white;
+}
+
+/*MENSAJES*/
+
+.o_mail_thread .o_thread_message, .o_mail_activity .o_thread_message {
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 4px 16px;
+  margin-bottom: 0px;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_sidebar, .o_mail_activity .o_thread_message .o_thread_message_sidebar {
+    -ms-flex: 0 0 36px;
+    -moz-flex: 0 0 36px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 36px;
+    flex: 0 0 36px;
+    margin-right: 10px;
+    margin-top: 2px;
+    text-align: center;
+    font-size: smaller;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_sidebar .o_thread_message_avatar, .o_mail_activity .o_thread_message .o_thread_message_sidebar .o_thread_message_avatar {
+    max-width: 36px;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_core.o_mail_note, .o_mail_activity .o_thread_message .o_thread_message_core.o_mail_note {
+    background-color: rgba(229, 229, 229, 0.5);
+    padding-left: 9.6px;
+    border-bottom: 1px solid #d9d7d7;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_core, .o_mail_activity .o_thread_message .o_thread_message_core {
+    -ms-flex: 1 1 auto;
+    -moz-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_core .o_mail_info, .o_mail_activity .o_thread_message .o_thread_message_core .o_mail_info {
+    margin-bottom: 2px;
+    color: #777777;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_core p, .o_mail_activity .o_thread_message .o_thread_message_core p {
+    margin: 0 0 9px;
+}
+
+p {
+  margin: 0 0 9px;
+}
+
+.o_mail_thread .o_thread_message .o_thread_message_core .o_mail_info strong, .o_mail_activity .o_thread_message .o_thread_message_core .o_mail_info strong {
+  color: inherit;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 9px;
+}

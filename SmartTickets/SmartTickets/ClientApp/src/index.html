@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart Tickets</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="css/fixedHeader.bootstrap.min.css">
+  <link rel="stylesheet" href="css/responsive.bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css" />
+  <link rel="stylesheet" href="css/_all-skins.min.css" />
+  <link rel="stylesheet" href="css/micss.css" />
+
+  <style>
+    .table_header {
+      background-color: rgb(60, 141, 188);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body class="skin-blue-light sidebar-mini" style="height: auto;">
+  <app-root>Loading...</app-root>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/fontawesome.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
+  <script src="js/dataTables.fixedHeader.min.js"></script>
+  <script src="js/dataTables.responsive.min.js"></script>
+  <script src="js/responsive.bootstrap.min.js"></script>
+  <script src="js/jquery.slimscroll.min.js"></script>
+  <script src="js/fastclick.js"></script>
+  <script src="js/app.min.js"></script>
+  <script src="js/demo.js"></script>
+
+  <script>
+    $(function () {
+
+
+      var table = $('#example1').DataTable({
+        "language": {
+          "url": "js/Spanish.json"
+        },
+        responsive: true
+      });
+
+      var table2 = $('#example2').DataTable({
+        "language": {
+          "url": "js/Spanish.json"
+        },
+        responsive: true,
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+
+      /*$("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });*/
+    });
+  </script>
+</body>
+</html>

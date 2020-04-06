@@ -1,0 +1,201 @@
+<div class="content-wrapper" style="min-height: 657px;">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>Reportes</h1>
+    <ol class="breadcrumb">
+      <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li class="active">Reportes</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Registro de Tickets</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <!-- form print -->
+            <form class="form-horizontal" role="form" id="reportes">
+              <div class="form-group row">
+                <input type="hidden" class="form-control" id="name_user" value="Hola">
+                <div class="col-md-3 pull-left">
+                  <input type="text" class="form-control" id="daterange" name="daterange" value="01/12/2019 - 23/12/2019" readonly="" onchange="load(1);">
+                </div>
+                <div class="col-md-3 pull-left">
+                  <select class="form-control" id="category" name="category" onchange="load(1);">
+                    <option selected="" value="0">-- Imprimir por Categoria --</option>
+                    <option value="1">Registrado</option>
+                    <option value="2">Asignado</option>
+                    <option value="3">Con Incidencia</option>
+                    <option value="4">Atendido</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-default" onclick="load(1);">
+                    <span class="glyphicon glyphicon-search"></span> Buscar
+                  </button>
+                  <span id="loader"></span>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-default pull-right">
+                    <span class="glyphicon glyphicon-print"></span> Imprimir
+                  </button>
+
+                  <a style="margin-right: 3px" target="_blank" href="reportes/exportar.php" class="btn btn-default pull-right">
+                    <span class="fa fa-file-excel-o"></span> Descargar
+                  </a>
+                </div>
+              </div>
+            </form>
+            <!-- end form print -->
+
+            <div class="table-responsive">
+              <!-- ajax -->
+              <div id="resultados"></div><!-- Carga los datos ajax -->
+              <div class="outer_div">
+                <table class="table table-striped table-bordered table-hover">
+                  <thead class="table_header">
+                    <tr>
+                      <th class="column-title">Fecha </th>
+                      <th class="column-title">Codigo </th>
+                      <th class="column-title">Nombre </th>
+                      <th class="column-title">Empresa </th>
+                      <th class="column-title">Estado </th>
+                      <!-- <th class="column-title no-link last"><span class="nobr"></span></th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>23/12/2019</td>
+                      <td>B2019 - 000769</td>
+                      <td>Ricardo Rios <b>(ricardo.rrios6@gmail.com)</b></td>
+                      <td><a href="#">arqui</a></td>
+                      <td>
+                        <span class="label label-info">Asignados</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>13/12/2019</td>
+                      <td>B2019 - 000768</td>
+                      <td>parroquia crito rey <b>(oeducati2019@gmail.com)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-success">Atendidos</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>12/12/2019</td>
+                      <td>B2019 - 000767</td>
+                      <td>molina - gremio salta  <b>(molina@gemiosalta.com.ar)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-success">Atendidos</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>11/12/2019</td>
+                      <td>B2019 - 000766</td>
+                      <td>Rafel - los pinos  <b>(lu.his@hotmail.com)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-success">Atendidos</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>11/12/2019</td>
+                      <td>B2019 - 000765</td>
+                      <td>Carla Bejarano <b>(carla.bejarano@gmail.com)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-danger">Con Incidencia</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>11/12/2019</td>
+                      <td>B2019 - 000764</td>
+                      <td>Pablo Barrionuevo  <b>(pablo.barrionuevo@netse.com.ar)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-danger">Con Incidencia</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>11/12/2019</td>
+                      <td>B2019 - 000763</td>
+                      <td>ARTURO ELIAS <b>(AELIAS@ITDOS.COM)</b></td>
+                      <td><a href="#">Jajaja</a></td>
+                      <td>
+                        <span class="label label-info">Asignados</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>11/12/2019</td>
+                      <td>B2019 - 000762</td>
+                      <td>CARLOS  <b>(km2tecnologia@gmail.com)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-info">Asignados</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>09/12/2019</td>
+                      <td>B2019 - 000761</td>
+                      <td>arturo <b>(arturomr11.cg@gmail.com)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-success">Atendidos</span>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <td>09/12/2019</td>
+                      <td>B2019 - 000760</td>
+                      <td>carlos <b>(cesar@gmail)</b></td>
+                      <td><a href="#">ABisoft INC</a></td>
+                      <td>
+                        <span class="label label-success">Atendidos</span>
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td colspan="5">
+                        <span class="pull-right">
+                          <ul class="pagination pagination-large"><li class="disabled"><span><a>‹ Anterior</a></span></li><li class="active"><a>1</a></li><li><a href="javascript:void(0);" onclick="load(2)">2</a></li><li><span><a href="javascript:void(0);" onclick="load(2)">Siguiente ›</a></span></li></ul>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div><!-- Carga los datos ajax -->
+              <!-- /ajax -->
+            </div>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section><!-- /.content -->
+</div>
